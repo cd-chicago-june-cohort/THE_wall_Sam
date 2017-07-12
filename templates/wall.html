@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename ='styles.css')}}">
+    <title>THE WALL</title>
+  </head>
+  <body>
+    <form action="/logout" id="logout">
+        <input type="submit" value="Logout">
+    </form>
+    <h1>THE WALL</h1>
+    <div id="post_message_head">
+        <h3>Post a message:</h3>
+        <form action="/message" method="post" id="message">
+            <textarea name="msg" id="postmessage"></textarea>
+            <input type="submit" id="post_message_button" value="Post">
+        </form>
+    </div>
+    {% for post in message_board %}
+        <div class="msg_post">
+            <h4>{{post.first_name}} {{post.last_name}} - {{post.created_at.strftime("%B %-d, %Y")}}</h4>
+            <p>{{post.message}}</p>
+                <div class="comment_section">
+                    {% for comment in comment_list %}
+                        {% if comment.messages_id == post.id %}
+                            <h5>{{comment.first_name}} {{comment.last_name}} - {{comment.created_at.strftime("%B %-d, %Y")}}</h5> 
+                            <p>{{comment.comment}}</p>
+                        {%endif%}
+                    {%endfor%}
+                        <form action="/comment" method="post" id="post_com">
+                            <textarea name="comment" id="write_comment" ></textarea>
+                            <input type="hidden" value="{{post.id}}" name="message_id" >
+                            <input type="submit" value="Post a comment">
+                        </form>
+                </div>
+        </div>
+    {% endfor %}
+  </body>
+</html>

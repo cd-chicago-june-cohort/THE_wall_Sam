@@ -1,0 +1,88 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+/*LOGIN STYLES*/
+
+#login{
+    display: inline-block;
+    width: 400px;
+    height: 600px;
+    vertical-align: top;
+}
+
+#registration {
+    display: inline-block;
+    width: 400px;
+    height: 600px;
+    vertical-align: top;
+}
+
+input {
+    display: block;
+}
+
+form{
+    display: inline-block;
+}
+
+#container{
+    margin: auto;
+    width: 850px;
+}
+
+#flash{
+    width: 600px;
+    margin: auto;
+    text-align: center;
+    color:red;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/*THE WALL STYLES*/
+
+#logout{
+    height: 20px;
+    padding: 10px 0px 0px 20px;
+}
+
+h1{
+    width: 200px;
+    text-align: center;
+    margin: auto;
+}
+
+#postmessage{
+    width: 700px;
+    height: 150px;
+    border: 1px solid black;
+}
+
+#post_message_head{
+    height: 200px;
+    width: 700px;
+    padding: 10px;
+    margin: auto;
+}
+
+#post_message_button{
+    width: 55px;
+    margin: 0px 0px 0px 640px;
+    height: 30px;
+    font-size: 18px;
+}
+
+.msg_post{
+    border: 1px solid black;
+    width: 550px;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.comment_section{
+    margin: 10px;
+    width: 500px;
+    border: 1px solid red;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename ='styles.css')}}">
+    <title>THE WALL - LOGIN</title>
+  </head>
+  <body>
+    <div id='flash'>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+    <div id='container'>
+        <div id='login'>
+            <h1>Login</h1>
+            <form id='loginform' action='/login' method='post'>
+                <label for='email'>Email:</label>
+                <input type='text' name='email'>
+                <label for='password'>Password:</label>
+                <input type='password' name='password'>
+                <input type='submit' value='Login'>
+            </form>
+        </div>
+        <div id='registration'>
+            <h1>Register</h1>
+            <form id='registerform' action='/register' method='post'>
+                <label for='first_name'>First Name:</label>
+                <input type='text' name='first_name'>
+                <label for='last_name'>Last Name:</label>
+                <input type='text' name='last_name'>
+                <label for='email'>Email:</label>
+                <input type='text' name='email'>
+                <label for='password'>Password:</label>
+                <input type='password' name='password'>
+                <label for='confirm'>Confirm Password:</label>
+                <input type='password' name='confirm'>
+                <input type='submit' value='Login'>
+            </form>
+        </div>
+    </div>
+  </body>
+</html>
